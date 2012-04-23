@@ -1,7 +1,0 @@
-AuthUserFile /www/htdocs/w00dfcf1//mmt/usage//.htpasswd
-AuthGroupFile /dev/null
-AuthName ByPassword
-AuthType Basic
-<Limit GET POST>
-require user w00dfcf1
-</Limit>
