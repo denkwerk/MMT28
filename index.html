@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>A gentle introduction to NODE.JS</title>
+	
+	<meta name="description" content="A jQuery library for modern HTML presentations">
+	<meta name="author" content="Caleb Troughton">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="../core/deck.core.css">
+	<link rel="stylesheet" href="../extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="../extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="../extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="../extensions/status/deck.status.css">
+	<link rel="stylesheet" href="../extensions/hash/deck.hash.css">
+	
+	<!-- Theme CSS files (menu swaps these out) -->
+	<link rel="stylesheet" id="style-theme-link" href="../themes/style/neon.css">
+	<link rel="stylesheet" id="transition-theme-link" href="../themes/transition/vertical-slide.css">
+	
+	<!-- Custom CSS just for this page -->
+	<link rel="stylesheet" href="introduction.css">
+	
+	<script src="../modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<!-- Title slide -->
+<section class="slide" id="title-slide" style="background: url('img/space-invaders.jpg') no-repeat 50% 10%">
+	<h1 style="color: hsl(111, 100%, 69%); text-shadow: 0 0 50px  hsl(111, 100%, 69%), 0 0 3px"><strong>All your servers are belong to us</strong></h1>
+</section>
+
+<!-- The ME slide -->
+<section class="slide" id="the-me-slide">
+<h2>Some things to keep in your &lt;head/&gt;</h2>
+<p style="color: hsl(111, 100%, 69%); margin-bottom: 0 !important; text-shadow: 0 0 50px  hsl(111, 100%, 69%), 0 0 3px"><code>&nbsp;</code></p>
+<pre>
+<code>
+<article class="slide" id="the-me-slide-head-start">&lt;head&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-1">&lt;meta name=&quot;<span style="color: hsl(28, 85%, 50%)">AUTHOR</span>&quot; content=&quot;<span style="color: hsl(62, 98%, 50%)">Sebastian Golasch</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-2">&lt;meta name=&quot;<span style="color: hsl(28, 85%, 50%)">GEO.LOCATION</span>&quot; content=&quot;<span style="color: hsl(62, 98%, 50%)">Cologne</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-3">&lt;meta http-equiv=&quot;<span style="color: hsl(28, 85%, 50%)">CONTENT-SCRIPT-TYPE</span>&quot; content=&quot;<span style="color: hsl(62, 98%, 50%)">text/javascript</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-4">&lt;meta http-equiv=&quot;<span style="color: hsl(28, 85%, 50%)">CONTENT-SCRIPT-TYPE</span>&quot; content=&quot;<span style="color: hsl(62, 98%, 50%)">text/php</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-5">&lt;meta http-equiv=&quot;<span style="color: hsl(28, 85%, 50%)">CONTENT-SCRIPT-TYPE</span>&quot; content=&quot;<span style="color: hsl(62, 98%, 50%)">text/java</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-6">&lt;meta http-equiv=&quot;<span style="color: hsl(28, 85%, 50%)">CONTENT-SCRIPT-TYPE</span>&quot; content=&quot;<span style="color: hsl(62, 98%, 50%)">text/coffeescript</span>&quot;/&gt;</article>         
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-7">&lt;meta name=&quot;<span style="color: hsl(28, 85%, 50%)">KEYWORDS</span>&quot; content=&quot;<span style="color: hsl(62, 98%, 50%)">8-bit, weird music, coffee, jetpacks</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-8">&lt;meta name=&quot;<span style="color: hsl(28, 85%, 50%)">DATE</span>&quot; content=&quot;<span style="color: hsl(62, 98%, 50%)">Girls</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-9">&lt;meta name=&quot;<span style="color: hsl(28, 85%, 50%)">ROBOTS</span>&quot; content=&quot;<span style="color: hsl(62, 98%, 50%)">needlovetoo</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-10">&lt;link rel=&quot;<span style="color: hsl(28, 85%, 50%)">DNS-PREFETCH</span>&quot; href=&quot;<span style="color: hsl(62, 98%, 50%)">http://www.denkwerk.com</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-11">&lt;link rel=&quot;<span style="color: hsl(28, 85%, 50%)">ALTERNATE</span>&quot; type=&quot;<span style="color: hsl(180, 99%, 50%)">TWITTER</span>&quot; href=&quot;<span style="color: hsl(62, 98%, 50%)">@asciidisco</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-12">&lt;link rel=&quot;<span style="color: hsl(28, 85%, 50%)">ALTERNATE</span>&quot; type=&quot;<span style="color: hsl(180, 99%, 50%)">GITHUB</span>&quot; href=&quot;<span style="color: hsl(62, 98%, 50%)">github.com/asciidisco</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-13">&lt;link rel=&quot;<span style="color: hsl(28, 85%, 50%)">CANONICAL</span>&quot; href=&quot;<span style="color: hsl(62, 98%, 50%)">mmt.asciidisco.com</span>&quot;/&gt;</article>
+   <article style="margin-top: -50px !important" class="slide" id="the-me-slide-14">&lt;link rel=&quot;<span style="color: hsl(28, 85%, 50%)">PINGBACK</span>&quot; href=&quot;<span style="color: hsl(62, 98%, 50%)">Sure. Let´s talk.</span>&quot;/&gt;</article>   
+<article style="margin-top: -25px !important" class="slide" id="the-me-slide-head-end">&lt;/head&gt;</article>
+</code>
+</pre>
+</section>
+
+<!-- The denkwerk slide -->
+<section class="slide" id="the-denkwerk-slide">
+	<br /><br /><br /><br />
+	<br /><br /><br /><br />
+	<br /><br /><br /><br />
+	<img src="img/denkwerk_logo_large.png" />
+</section>
+
+<!-- The turtle slide -->
+<section class="slide" id="the-turtle-slide">
+	<br /><br /><br /><br />
+	<img src="img/node_turtle.png" />
+</section>
+
+<!-- A gentle introduction to NODE.JS -->
+<section class="slide" id="a-gentle-introduction">
+	<h2>A gentle introduction to NODE.JS</h2>
+	<ol>
+		<li class="slide" id="history-goto">
+			<h3>The history of JavaScript</h3>
+			<p>... confusing, even for the one who started this whole thing</p>
+		</li>
+		<li class="slide" id="mustache-goto">
+			<h3>The mustache theory</h3>
+			<p>... never underestimate a language because it´s different than the ones you know</p>
+		</li>
+		<li class="slide" id="node-goto">
+			<h3>Back to topic: "What´s this Node thingy?"</h3>
+			<p>... JavaScript on the Server, V8, The event loop, Why it is the Future</p>
+		</li>
+		<li class="slide" id="examples-goto">
+			<h3>"You mean like jQuery on the Server?!"</h3>
+			<p>... yeah, but we can do better. Let´s do a small experiment</p>
+		</li>		
+	</ol>
+</section>
+
+<!-- History of javascript -->
+
+<!-- History Title slide -->
+<section class="slide" id="title-slide-history" style="background: url('img/bttf.jpeg') no-repeat 50% 45%">
+	<h1 style="color: hsl(111, 100%, 69%); text-shadow: 0 0 50px  hsl(111, 100%, 69%), 0 0 3px"><strong>The history of JavaScript</strong></h1>
+</section>
+
+<!-- Early History Data slide -->
+<section class="slide" id="history-of-js">
+	<h2>The early days</h2>
+	<p class="upfront">Wow, the sweet 16 party is over!</p>
+	<ul>
+		<li class="slide" id="history-1995-1">
+			<strong>1995</strong>:
+			Brendan Eich developed
+			<strike>LiveScript</strike>,
+			EcmaScript?, JScript?, <strong>JavaScript!</strong>
+			in about <strong>12</strong> days<br />
+			Eich took the best out of Lisp (his former favourite)<br />
+			The worst C / Javaish Syntax (Sun wanted that crap)<br />
+			and the prototypical inheritance from Self (For the thrill of it)
+		</li>
+
+		<li class="slide" id="history-1996-1">
+			<strong>1996</strong>:
+			The Netscape Navigator 2.0 came out.
+			JavaScript released into the world wild web.
+		</li>
+
+		<li class="slide" id="history-1996-2">
+			<strong>1996</strong>:
+			Internet Explorer 3.0 came out.
+			Birth of JScript (Microsofts shallow JS copy).
+			Browser war began.
+		</li>
+
+		<li class="slide" id="history-1996-3">
+			<strong>1996</strong>:
+			Netscapes Livewire came out.
+			First attempt of Server Side JS
+		</li>
+
+		<li class="slide" id="history-1997-1">
+			<strong>1997</strong>:
+			First edition of ECMAScript
+		</li>
+
+		<li class="slide" id="history-1999">
+			<strong>1999</strong>:
+			Microsoft invented the XMLHTTP Object.
+			Yeah, AJAX´n stuff!
+		</li>
+					
+	</ul>
+</section>
+
+<!-- Late History Data slide -->
+<section class="slide" id="late-history-of-js">
+	<h2>Nowadays</h2>
+	<p class="upfront">Accidentally we took over the world!</p>
+	<ul>
+
+		<li class="slide" id="history-2000">
+			<strong>2000</strong>:
+			The Crock discovered JSON
+		</li>
+
+		<li class="slide" id="history-2005-1">
+			<strong>2005</strong>:
+			jQuery made JavaScript attractive to a lot of confused non JS devs
+		</li>
+			
+		<li class="slide" id="history-2005-2">
+			<strong>2005</strong>:
+			Adobe brought JS based scripting to the CS2 products
+		</li>
+
+		<li class="slide" id="history-2006">
+			<strong>2006</strong>:
+			CouchDB brought JavaScript into the database world
+		</li>
+
+		<li class="slide" id="history-2007">
+			<strong>2007</strong>:
+			Safari on Windows. (WebKit, you know)
+		</li>
+
+		<li class="slide" id="history-2008">
+			<strong>2008</strong>:
+			Realease of Google Chrome and V8 pushing JS to the limit
+		</li>
+		
+		<li class="slide" id="history-2009-2">
+			<strong>2009</strong>:
+			Ryan Dahl invented NodeJS  
+		</li>
+		
+		<li class="slide" id="history-2011">
+			<strong>2011</strong>:
+			NodeJS running on POSIX and Windows machines.
+			Microsoft spend some $´s to get this working.
+		</li>											
+	</ul>
+</section>
+
+<!-- Why JavaScript matters -->
+<section class="slide" id="why-javascript-matters">
+	<h2>Why JavaScript matters</h2>
+	<p class="upfront">So after this massive amount of history, you´re ready for the essence:</p>
+
+	<ul class="big-points">
+		<li class="big-point">
+			The pool of JavaScript developers is huge.
+			And it´s growing and growing and gr...
+		</li>
+		<li class="big-point">
+			JavaScript is everywhere: Browsers, WebServers, Databases, Mobile Devices,
+			Photoshop, TV´s, ...
+		</li>
+		<li class="big-point">
+			Companies like Adobe, Google, Apple and Microsoft are spending
+			a huge amount of money to make JS even better.
+		</li>
+		<li class="big-point">
+			JavaScript seems to be the worlds most used programming language.
+			At least in the web. 
+		</li>		
+	</ul>	
+</section>
+
+<!-- Why is JavaScript underestimated -->
+<section class="slide" id="js-underestimated">
+	<h2>This leads to one question:</h2>
+	<blockquote>
+		<p>Why is JavaScript treated as a toy language?</p>
+		<p><cite>Random JS Developer</cite></p>
+	</blockquote>
+	<blockquote class="slide" id="the-java-dev">
+		<p>Tried it once, was confusing and disgusting!</p>
+		<p><cite>Random <strike>Java</strike> Developer</cite></p>
+	</blockquote>
+</section>
+
+<!-- The mustache theory -->
+<section class="slide" id="mustache-theory" style="background: url('img/mustache.png') no-repeat 70% 10%; background-size: 99%;">
+	<h1 style="color: hsl(111, 100%, 69%); text-shadow: 0 0 50px  hsl(111, 100%, 69%), 0 0 3px"><strong>The mustache theory</strong></h1>
+</section>
+
+<!-- Inventor of lisp -->
+<section class="slide" id="invented-lisp">
+	<h2>John McCarthy</h2>
+	<img src="img/jmccolor.jpg" alt="McCarthy" height="400">
+	<pre class="mustache-code">&lt;code&gt;Invented Lisp&lt;/code&gt;</pre>
+</section>
+
+<!-- Inventor of C-Sharp -->
+<section class="slide" id="invented-c">
+	<h2>Dennis Ritchie</h2>
+	<img src="img/dennis_ritchie.jpg" alt="Richie" height="400">
+	<pre class="mustache-code">&lt;code&gt;Invented C&lt;/code&gt;</pre>
+</section>
+
+<!-- Inventor of Java -->
+<section class="slide" id="invented-java">
+	<h2>James Gosling</h2>
+	<img src="img/james-gosling-joins-google.jpg" alt="Gosling" height="400">
+	<pre class="mustache-code">&lt;code&gt;Invented Java&lt;/code&gt;</pre>
+</section>
+
+<!-- Inventor of c++ -->
+<section class="slide" id="invented-cplusplus">
+	<h2>Bjarne Stroustrup</h2>
+	<img src="img/bjarne2.jpg" alt="Strostrup" height="400">
+	<pre class="mustache-code">&lt;code&gt;Invented C++&lt;/code&gt;</pre>
+</section>
+
+<!-- Inventor of JavaScript -->
+<section class="slide" id="invented-javascript">
+	<h2>Brendan Eich</h2>
+	<img src="img/1202470502643.jpg" alt="Eich" height="400">
+	<pre class="mustache-code">&lt;code&gt;Invented JavaScript&lt;/code&gt;</pre>
+</section>
+
+<!-- Notice the difference -->
+<section class="slide" id="the-difference">
+	<h2>???</h2>
+	<h1>Noticed the difference?</h1>
+</section>
+
+<!-- No Beard! -->
+<section class="slide" id="no-beard">
+	<h2>Brendan Eich</h2>
+	<img src="img/1202470502643.jpg" alt="Eich" height="400">
+	<h1 style="color: red; font-weight: bold; font-size: 10em;">No beard!</h1>
+</section>
+
+<!-- BTT -->
+<!-- History Title slide -->
+<section class="slide" id="node-js" style="background: url('img/paperboy.jpg') no-repeat 50% 25%">
+	<h1 style="color: hsl(111, 100%, 69%); text-shadow: 0 0 50px  hsl(111, 100%, 69%), 0 0 3px"><strong>BTT: We want to hear something about NODE</strong></h1>
+</section>
+
+<!-- Node core fact -->
+<section class="slide" id="node-core-fact">
+	<h2>Super famous quote:</h2>
+	<br /><br /><br /><br /><br /><br />
+	<blockquote>
+		<p>Nodes´s goal is to provide an easy way to build scalable network programs</p>
+		<p><cite><a href="http://nodejs.org/#about">http://nodejs.org/#about</a></cite></p>
+	</blockquote>
+</section>
+
+<!-- What´s node -->
+<section class="slide" id="node-js-facts">
+	<h2>NODE.JS - The facts</h2>
+	<ul>
+		<li class="slide" id="invented-fact">Invented by Ryan Dahl of Joyent, spring 2009</li>
+		<li class="slide" id="based-on-fact">A command line tool</li>
+		<li class="slide" id="based-on-fact">Based on a couple of C++ libs on top of Googles V8</li>
+		<li class="slide" id="based-on-actually-fact">Actually just a thin layer between the C libs and a JavaScript interface to use em!</li>
+		<li class="slide" id="the-loop-fact">Asynchronous, Non-Blocking I/O (The famous EventLoop - &lt;3 of Node) We will get there in a moment!</li>
+		<li class="slide" id="the-http-fact">Designed for the network. Request and Response, cause there is nothing else in the web</li>
+		<li class="slide" id="the-event-fact">Heavy use of events! Kinda related to the EventLoop thingy</li>
+		<li class="slide" id="the-swiss-fact">Swiss army knife for network related stuff</li>
+		<li class="slide" id="the-thousand-fact">Can handle thousands of concurrent connections with minimal overhead (CPU/MEMORY) on a single Process</li>		
+	</ul>
+</section>
+
+<!-- Show us some code -->
+<section class="slide" id="show-us-some-code">
+<h2>ENOUGH! Show us some code plz!</h2>
+<img src="img/3260092832_7af8d668a0_b.jpg" />
+</section>
+
+<!-- The code -->
+<section class="slide" id="code-true-story">
+	<h2>A Webserver - true story</h2>
+	<p class="upfront">Anatomy of a small node program</p>
+	<pre>
+	<code>
+<span class="slide" id="true-story-http">var http = require('http');</span>
+<span class="slide" id="true-story-server">http.createServer</span><span class="true-function">(function (</span><span class="slide" id="true-story-rr"><span id="req">request</span>, <span id="res">response</span></span><span class="true-function">) {</span>
+<span class="slide" id="true-story-headmeta"><span id="res2">response</span>.<span id="res5">writeHead(200, {'Content-Type': 'text/plain'});</span></span>
+<span class="slide" id="true-story-body"><span id="res3">response</span>.<span id="res4">end('Hello World\n');</span></span>
+<span class="true-function">}).</span><span id="server-end-thing">listen(1337, "127.0.0.1");</span>
+<span class="slide" id="true-console"><span id="cons-1">console.log</span><span id="cons-2">('Server running at http://127.0.0.1:1337/');</span></span>
+	</code>
+	</pre>
+
+		<p id="like-the-console" style="padding-top: 10px; padding-bottom: 10px; border: 1px solid white;"><code>$ node my-awesome-hello-world-server.js</code></p>
+		<p id="like-the-console-2" style="padding-top: 10px; padding-bottom: 10px; border: 1px solid white; display: none;">
+		<code>
+			$ node my-awesome-hello-world-server.js<br />
+			$ Server running at http://127.0.0.1:1337/
+		</code>
+		</p>
+</section>
+
+<!-- The event loop -->
+<section class="slide" id="the-famous-event-loop-start">
+	<h2>The EventLoop</h2>
+	<img src="img/rolercoaster.jpg" />
+</section>
+
+<!-- The event loop burger -->
+<section class="slide" id="the-famous-event-loop-burger">
+	<h2>Imagine you´re <strike>in a restaurant</strike> at Burger King</h2>
+	<img src="img/4974387695_1e525cb43a_b.jpg" />
+</section>
+
+<!-- In PHP -->
+<section class="slide" id="the-non-event-loop-code-thing">
+	<h2>In PHP were used to sequential, blocking stuff</h2>
+	<p>Blocking:</p>
+	<code>
+	<pre>
+<span class="comment">// Ask the database for data</span>  
+<span class="variable">$amigaUsers</span> = <span class="variable">$mySuperDbAdapter</span>-><span class="method">query</span>(<span class="query">'select * from amiga_users'</span>);
+<span class="comment">// Wait for it!</span>
+
+<span class="comment">// Ask the database for more data</span>
+<span class="variable">$commodoreUsers</span> = <span class="variable">$mySuperDbAdapter</span>-><span class="method">query</span>(<span class="query">'select * from c64_users'</span>);
+<span class="comment">// Wait for it! AGAIN!</span>
+
+<span class="comment">// then do something with the data</span>
+
+	</pre>
+	</code>
+</section>
+
+<!-- In node -->
+<section class="slide" id="the-event-loop-code-thing">
+	<h2>More code. Yeeehaw! But this time awesome</h2>
+	<p>Non-blocking:</p>
+	<code>
+	<pre>
+<span class="variable">db</span>.<span class="method">query</span>(<span class="query">'select * from amiga_users'</span>, function(<span class="variable">amiga_users</span>) {
+    <span class="comment">// do something with result</span>
+});
+
+<span class="comment">// No more waiting! BAM!</span>
+
+<span class="variable">db</span>.<span class="method">query</span>(<span class="query">'select * from c64_users'</span>, function(<span class="variable">commodore_users</span>) {
+    <span class="comment">// do something with result</span>
+});
+
+	</pre>
+	</code>
+</section>
+
+<!-- Spuk im netz -->
+<section class="slide" id="three-investigators">
+	<h2>FQA - Frequently questioned answers</h2>
+	<img src="img/DDF_132_CD.jpg" width="670"/>
+</section>
+
+<section class="slide" id="question-data-structures">
+	<h2>Investigating NODE - Part I</h2>
+	<br /><br /><br /><br /><br /><br />
+	<blockquote>
+	"So I don't have to worry about code accessing the same data structures at the same time?"<br />
+	<cite>Interested programmer with computer science background</cite>
+	</blockquote>
+</section>
+
+<section class="slide" id="question-the-boss-slidex">
+	<h2>Investigating NODE - Part II</h2>
+	<br /><br /><br /><br /><br /><br />
+	<blockquote>
+"Very nice, but why should I use it?"<br />
+	<cite>Interested developer who will get his boss on to it</cite>
+	</blockquote>
+</section>
+
+<section class="slide" id="question-nail">
+	<h2>Investigating NODE - Part III</h2>
+	<br /><br /><br /><br /><br /><br />
+	<blockquote>
+"So you are saying I should write all my apps in node from now on?"<br />
+	<cite>Confused developer who will try to do everything in node from now on</cite>
+	</blockquote>
+</section>
+
+<section class="slide" id="question-dom">
+	<h2>Investigating NODE - Part IV</h2>
+	<br /><br /><br /><br /><br /><br />
+	<blockquote>
+"Can I access the DOM in node?"<br />
+	<cite>Developer who still thinks that node is a client side library</cite>
+	</blockquote>
+</section>
+
+<section class="slide" id="question-java-again">
+	<h2>Investigating NODE - Part V</h2>
+	<br /><br /><br /><br /><br /><br />
+	<blockquote>
+"Isn't event driven programming really hard?"<br />
+	<cite>Again the <strike>Java</strike> guy. I will never get you satisfied...</cite>
+	</blockquote>
+</section>
+
+<section class="slide" id="question-yap-got-you">
+	<h2>Investigating NODE - Part VII</h2>
+	<br /><br /><br /><br /><br /><br />
+	<blockquote>
+"Where can I learn more?"<br />
+	<cite>You´re the kind of guy I like</cite>
+	</blockquote>
+</section>
+
+<!-- The experiment -->
+<section class="slide" id="the-experiment" style="background: url('img/experiment.jpg') no-repeat 50% 40%">
+	<h1 style="color: hsl(111, 100%, 69%); text-shadow: 0 0 50px  hsl(111, 100%, 69%), 0 0 3px"><strong>The Experiment</strong></h1>
+</section>
+
+<!-- Wir stellen ein -->
+<section id="denkwerk-hiring" class="slide">
+	<h1>
+	BTW: We´re hiring!<br />
+	Come over and talk to us
+	</h1>
+</section>
+
+<!-- Questionas -->
+<section id="questions" class="slide">
+	<h1>
+	Questions?
+	</h1>
+</section>
+
+<!-- Go fun yourself -->
+<section id="go-fun-yourself" class="slide">
+	<img src="img/SHFC_CD_Cover.jpg" width="750"/>
+</section>
+
+<a style="display: none !important" href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a style="display: none !important" href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p style="display: none !important" class="deck-status">
+	<span class="deck-status-current"></span>/<span class="deck-status-total"></span>
+</p>
+
+<form style="display: none !important" action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide">
+	<input type="submit" value="Go">
+</form>
+
+<a style="display: none !important" href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<script src="../jquery-1.6.4.min.js"></script>
+
+<!-- Socket IO -->
+<script src="socketio.js"></script>
+
+<!-- Deck Core and extensions -->
+<script src="../core/deck.core.js"></script>
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/hash/deck.hash.js"></script>
+
+<!-- Specific to this page -->
+<script src="introduction.js"></script>
+</body>
+</html>
